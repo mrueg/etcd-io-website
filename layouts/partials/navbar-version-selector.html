@@ -4,6 +4,11 @@
   <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     {{- .Site.Params.version_menu -}}
   </a>
+{{ else }}
+  <a class="nav-link dropdown-toggle disabled" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{- .Site.Params.version_menu -}}
+  </a>
+{{ end -}}
   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
     {{ if eq .Section "docs" -}}
     {{ $thisFile  := .File -}}
@@ -27,8 +32,4 @@
     {{ end -}}
     {{ end -}}
   </div>
-{{ else }}
-  <a class="nav-link dropdown-toggle disabled" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    {{- .Site.Params.version_menu -}}
-  </a>
-{{ end -}}
+
